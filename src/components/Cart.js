@@ -38,21 +38,37 @@ function Cart() {
   const filteredCartItems = cartItems.filter(item => item.category !== "men's clothing");
 
   return (
-    <div>
-      <h1>Shopping Cart</h1>
+    <div className="flex flex-col items-center justify-center bg-gray-100 py-10">
+      <h1 className="text-2xl font-bold mb-4">Shopping Cart</h1>
       {filteredCartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p className="text-lg">Your cart is empty.</p>
       ) : (
-        <div>
+        <div className="w-full max-w-2xl">
           {filteredCartItems.map(item => (
-            <div key={item.id}>
-              <img class = "cart-image" src={item.image} alt="" />
-              <p>{item.quantity} x {item.title} - ${item.price.toFixed(2)}</p>
-              <button onClick={() => handleRemoveFromCart(item.id)}>Remove</button>
+            <div key={item.id} className="flex items-center justify-between py-2 border-b border-gray-300">
+              <img className="w-16 h-16 object-contain mr-4" src={item.image} alt="" />
+              <div className="flex-grow">
+                <p className="text-lg font-medium">{item.title}</p>
+                <p className="text-gray-500">{item.quantity} x ${item.price.toFixed(2)}</p>
+              </div>
+              <button className="text-red-600 hover:text-red-800 font-medium" onClick={() => handleRemoveFromCart(item.id)}>Remove</button>
             </div>
           ))}
-          <h2>Total: ${cartTotal}</h2>
-          <button>Checkout</button>
+          <div className="mt-4">
+            <p className="text-lg font-medium">Total: ${cartTotal}</p>
+            <button className="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded mt-4"
+              onClick={() => {
+                setCartItems([]);
+                  for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key.startsWith('cart-')) {
+                      localStorage.removeItem(key);
+                    }
+                  }
+                }}>
+              Checkout
+            </button>
+          </div>
         </div>
       )}
     </div>

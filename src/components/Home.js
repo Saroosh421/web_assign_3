@@ -8,7 +8,7 @@ function Home() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [cart, setCart] = useState({});
   const [searchTerm, setSearchTerm] = useState('');
-  const [numItems, setNumItems] = useState(0);
+  const [numItems, setNumItems] = useState(1);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -86,9 +86,9 @@ function Home() {
                 <h2 className="product-title">{product.title}</h2>
               </Link>
               <p className="product-price">${product.price}</p>
-              <p className="product-stock">{product.quantity} In Stock</p>
+              <p className="product-stock">{product.quantity} In Stock: </p>
               <div className="add-to-cart">
-                <input type="number" min="0" defaultValue="0" onChange={(e) => setNumItems(parseInt(e.target.value))} />
+                <input type="number" min="1" defaultValue="1" onChange={(e) => setNumItems(parseInt(e.target.value))} />
                 <button className="btn btn-primary" onClick={() => handleAddToCart(product.id, numItems)}>Add to cart</button>
               </div>
             </div>
