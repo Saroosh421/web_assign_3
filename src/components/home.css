@@ -1,0 +1,154 @@
+body{
+  background-color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+.navbar-logo img {
+  height: 50px;
+}
+
+.navbar-search input {
+  width: 300px;
+  height: 30px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.cart-icon {
+  font-size: 30px;
+  margin-right: 5px;
+}
+
+.cart-count {
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 16px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.navbar-sections {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  background-color: white;
+}
+
+
+.section-button {
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.8rem 1.5rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.section-button:hover {
+  background-color: #b11e1e;
+  color: #fff;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background-color: white;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: 1e1e1e;
+  border-radius: 5px;
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-title {
+  margin: 1rem;
+  font-size: 16px;
+  text-align: center;
+  color: #1e1e1e;
+}
+
+.product-price {
+  margin: 0.2rem;
+  font-size: 16px;
+  color: #b11e1e;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.product-stock {
+  margin: 0;
+  font-size: 16px;
+  color: #1e1e1e;
+  text-align: center;
+}
+
+.add-to-cart {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  background-color: white;
+}
+
+.add-to-cart input {
+  width: 50px;
+  height: 30px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.add-to-cart button {
+  border: none;
+  background-color: #d43131;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-to-cart button:hover {
+  background-color: #b11e1e;
+}
