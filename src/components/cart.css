@@ -71,3 +71,10 @@ p {
 .checkout-btn:hover {
   background-color: #3e8e41;
 }
+
+.cart-image{
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin-right: 20px;
+}

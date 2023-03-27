@@ -35,7 +35,6 @@ function Cart() {
 
   const cartTotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2);
 
-  // Filter out men's clothing items
   const filteredCartItems = cartItems.filter(item => item.category !== "men's clothing");
 
   return (
@@ -47,7 +46,7 @@ function Cart() {
         <div>
           {filteredCartItems.map(item => (
             <div key={item.id}>
-              <img src={item.image} alt="" />
+              <img class = "cart-image" src={item.image} alt="" />
               <p>{item.quantity} x {item.title} - ${item.price.toFixed(2)}</p>
               <button onClick={() => handleRemoveFromCart(item.id)}>Remove</button>
             </div>
